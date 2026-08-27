@@ -1,6 +1,7 @@
 from Client import client
 from Account import Account
 
+from Transaction import transaction
 
 
 
@@ -34,3 +35,14 @@ print(Account_2.balance)
 Account_2.change_branch("Liyue")
 
 print(Account_2.bank_branch)
+
+transaction_1 = transaction("something", "1000", "blablabla", "balling",)
+
+transaction_1.transaction_processing("Success")
+
+
+transaction_1.transaction_processing("Cancelled")
+
+
+transaction_1.transaction_processing("Banana")
+
