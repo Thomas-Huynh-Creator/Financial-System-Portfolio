@@ -1,7 +1,7 @@
 from Client import client
 from Account import Account
-
 from Transaction import transaction
+from Branch import branch
 
 
 
@@ -46,3 +46,14 @@ transaction_1.transaction_processing("Cancelled")
 
 transaction_1.transaction_processing("Banana")
 
+
+
+branch_1 = branch("696969", "Evernight", "West Tingen", "101010",)
+
+branch_2 = branch("676767", "Siplh Co", "Verdenturf", "202020")
+
+branch_1.branch_state_change("open")
+
+print(branch_1.branch_avaliability)
+
+branch_2.update_phone_number("029120")
