@@ -24,14 +24,9 @@ class branch:
         self.phone_number = new_number
         print(f"Phone number has been changed to:{self.phone_number}")
 
+    def __str__(self):
+        return f"The branch name is: {self.branch_name}, The branch number is: {self.branch_number}, Location: {self.location}, Phone number: {self.phone_number}, branch avaliability: {self.branch_avaliability} "
 
 
-branch_1 = branch("696969", "Evernight", "West Tingen", "101010",)
-
-branch_2 = branch("676767", "Siplh Co", "Verdenturf", "202020")
-
-branch_1.branch_state_change("open")
-
-print(branch_1.branch_avaliability)
-
-branch_2.update_phone_number("029120")
+    def __repr__(self):
+        return f"branch(branch name = {self.branch_name}, branch availability = {self.branch_avaliability})"

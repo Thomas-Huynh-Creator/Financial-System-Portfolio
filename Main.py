@@ -57,3 +57,19 @@ branch_1.branch_state_change("open")
 print(branch_1.branch_avaliability)
 
 branch_2.update_phone_number("029120")
+
+print(client_1)
+
+print(Account_1)
+
+print(transaction_1)
+
+print(branch_1)
+
+print(repr(client_1))
+
+print(repr(Account_1))
+
+print(repr(transaction_1))
+
+print(repr(branch_1))

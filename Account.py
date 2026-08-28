@@ -35,7 +35,12 @@ class Account:
 
     def displayInfo_A(self,):
         return self.account_number, self.account_type, self.bank_branch, self.balance
+
+    def __str__(self):
+        return f"The account number is: {self.account_number}, The account type is: {self.account_type}, and the current balance is: {self.balance}"
     
 
+    def __repr__(self):
+        return f"account(account number = {self.account_number}, bank branch = {self.bank_branch}, balance = {self.balance})"
 
 

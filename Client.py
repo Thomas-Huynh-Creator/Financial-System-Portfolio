@@ -16,5 +16,12 @@ class client:
     def displayInfo_C(self,):
         return self.client_name, self.client_number, self.phone_number, self.MembershipLvl
 
+    def __str__(self):
+        return f"client name is: {self.client_name}, Client number is : {self.client_number}, Preferred contact method is: {self.phone_number}"
+
+
+    def __repr__(self):
+            return f"client(name = {self.client_name}, client number = {self.client_number}, MembershipLVL = {self.MembershipLvl})"
+
 
 
