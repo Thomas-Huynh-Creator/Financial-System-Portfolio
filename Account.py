@@ -8,39 +8,52 @@ class Account:
 
     def __init__(self, account_number, account_type, bank_branch, balance = 0,):
 
-        self.account_number = account_number
-        self.account_type = account_type
-        self.bank_branch = bank_branch
-        self.balance = balance
+        self.__account_number = account_number
+        self.__account_type = account_type
+        self.__bank_branch = bank_branch
+        self.__balance = balance
 
 
-    def deposit(self, deposit_amount,):
-        self.balance += deposit_amount
-        return self.balance
+    def set_deposit(self, deposit_amount,):
+        if isinstance(deposit_amount, bool):
+            print("Not a valid deposit")
+        elif isinstance(deposit_amount, int):
+            self.__balance += deposit_amount
+            print("Deposited", deposit_amount)
+            print("Balance is", self.__balance)
+        else: 
+            print("Not a valid deposit")
 
+    def set_withdraw(self, withdraw_amount):
 
-    def withdraw(self, withdraw_amount):
-        if withdraw_amount < self.balance:
-            self.balance -= withdraw_amount
-            return self.balance
+        if isinstance(withdraw_amount, bool):
+            print("Not a valid withdraw amount")
+        elif isinstance(withdraw_amount, (int, float)) and withdraw_amount <= self.__balance:
+            self.__balance -= withdraw_amount
+            print(" Withdrew", withdraw_amount)
+            print("Current balance is", self.__balance)
+            return self.__balance
+        elif withdraw_amount > self.__balance:
+            print("Withdraw amount greater then account balance")
         else:
-            print("Withdraw amount larger then account balance")
+            print("Not a valid withdraw amount")
+
 
     def change_branch(self, new_branch):
 
         if new_branch in Account.branches:
-            self.bank_branch = new_branch
+            self.__bank_branch = new_branch
         else:
             print("This branch does not exist")
 
-    def displayInfo_A(self,):
-        return self.account_number, self.account_type, self.bank_branch, self.balance
+    def get_displayInfo_A(self,):
+        return self.__account_number, self.__account_type, self.__bank_branch, self.__balance
 
     def __str__(self):
-        return f"The account number is: {self.account_number}, The account type is: {self.account_type}, and the current balance is: {self.balance}"
+        return f"The account number is: {self.__account_number}, The account type is: {self.__account_type}, and the current balance is: {self.__balance}"
     
 
     def __repr__(self):
-        return f"account(account number = {self.account_number}, bank branch = {self.bank_branch}, balance = {self.balance})"
+        return f"account(account number = {self.__account_number}, bank branch = {self.__bank_branch}, balance = {self.__balance})"
 
 
